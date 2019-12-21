@@ -26,5 +26,7 @@ class StartActivity : BaseActivity(), HasAndroidInjector {
     override fun androidInjector(): AndroidInjector<Any> = androidInjector
 
     override var navigator: Navigator? = SupportAppNavigator(this, R.id.flContainer)
+    override val layoutResource: Int
+        get() = 0
 
 }

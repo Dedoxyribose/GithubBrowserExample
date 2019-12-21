@@ -53,4 +53,19 @@ dependencies {
 
     kapt "com.google.dagger:dagger-android-processor:$DAGGER"
     kapt "com.google.dagger:dagger-compiler:$DAGGER"
+
+    implementation("com.squareup.retrofit2:retrofit:$RETROFIT") {
+        exclude module: "okhttp"
+    }
+
+    implementation "com.squareup.okhttp3:logging-interceptor:$OKHTTP"
+    implementation "com.squareup.okhttp3:okhttp:$OKHTTP"
+    implementation "com.squareup.retrofit2:converter-gson:$RETROFIT"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$RETROFIT"
+
+    implementation "io.reactivex.rxjava2:rxjava:$RXJAVA"
+    implementation "io.reactivex.rxjava2:rxandroid:$RXANDROID"
+
+    implementation "com.github.bumptech.glide:glide:$GLIDE"
+    annotationProcessor "com.github.bumptech.glide:compiler:$GLIDE"
 }

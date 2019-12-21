@@ -4,15 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import androidx.annotation.LayoutRes
-
+import androidx.core.content.ContextCompat
+import com.example.justsomeapplication.R
+import com.google.android.material.snackbar.Snackbar
 import moxy.MvpAppCompatFragment
 
-abstract class BaseFragment : MvpAppCompatFragment() {
+abstract class BaseFragment : MvpAppCompatFragment(), BaseMvpView {
 
     @get:LayoutRes
     protected abstract val layoutResource: Int
+
+    protected abstract val title: String
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,5 +23,29 @@ abstract class BaseFragment : MvpAppCompatFragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(layoutResource, container, false)
+    }
+
+    private fun updateTitle() {
+        if (activity is BaseActivity) {
+            (activity as BaseActivity).setTitle(title)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateTitle()
+    }
+
+    override fun showError(error: String) {
+        val snackBar = Snackbar.make(view!!, error, 3000)
+        val snackBarView = snackBar.view
+        snackBarView.setBackgroundColor(ContextCompat.getColor(context!!, R.color.errorBack))
+        snackBar.show()
+    }
+
+    override fun showLoading() {
+    }
+
+    override fun hideLoading() {
     }
 }

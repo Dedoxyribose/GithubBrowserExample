@@ -21,6 +21,8 @@ class WelcomeFragment : BaseFragment(), WelcomeView {
 
     override val layoutResource: Int
         get() = R.layout.f_welcome
+    override val title: String
+        get() = ""
 
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)

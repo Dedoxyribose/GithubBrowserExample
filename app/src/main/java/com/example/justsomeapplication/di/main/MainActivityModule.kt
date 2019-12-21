@@ -1,6 +1,6 @@
 package com.example.justsomeapplication.di.main
 
-import com.example.justsomeapplication.di.main.fragment.MainFragmentModule
+import com.example.justsomeapplication.di.main.fragment.UserFragmentModule
 import com.example.justsomeapplication.ui.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -8,6 +8,6 @@ import dagger.android.ContributesAndroidInjector
 @Module
 interface MainActivityModule {
     @MainScope
-    @ContributesAndroidInjector(modules = [MainFragmentModule::class])
+    @ContributesAndroidInjector(modules = [UserFragmentModule::class])
     fun activity(): MainActivity?
 }

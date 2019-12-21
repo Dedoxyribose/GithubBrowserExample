@@ -32,7 +32,7 @@ class Application : Application(), HasAndroidInjector {
 
         component = DaggerApplicationComponent.builder()
             .context(this)
-            .appModule(AppModule(this))
+            .appModule(AppModule())
             .build()
 
         component.inject(this)
