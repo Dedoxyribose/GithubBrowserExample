@@ -2,8 +2,6 @@
     <string name="app_name">Bowling App</string>
     <string name="do_search">Искать</string>
     <string name="user_name">Имя пользователя</string>
-    <string name="repo_count">Репозиториев: %d</string>
-    <string name="followers_count">Подписчиков: %d</string>
     <string name="nothing_found">Ничего не найдено</string>
     <string name="f_user_title">Пользователь</string>
     <string name="name_error">Введите имя пользователя для поиска</string>

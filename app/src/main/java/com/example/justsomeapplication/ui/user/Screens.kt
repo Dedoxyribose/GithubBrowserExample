@@ -1,6 +1,6 @@
-package com.example.justsomeapplication.ui.main
+package com.example.justsomeapplication.ui.user
 
-import com.example.justsomeapplication.ui.main.fragment.UserFragment
+import com.example.justsomeapplication.ui.user.fragment.UserFragment
 import ru.terrakok.cicerone.android.support.SupportAppScreen
 
 object Screens {

@@ -1,4 +1,4 @@
-package com.example.justsomeapplication.di.main.fragment
+package com.example.justsomeapplication.di.user.fragment
 
 import javax.inject.Scope
 

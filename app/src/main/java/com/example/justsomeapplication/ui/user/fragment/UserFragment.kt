@@ -1,10 +1,13 @@
-package com.example.justsomeapplication.ui.main.fragment
+package com.example.justsomeapplication.ui.user.fragment
 
 import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.StringRes
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 import com.example.justsomeapplication.R
 import com.example.justsomeapplication.model.User
 import com.example.justsomeapplication.ui.base.BaseFragment
@@ -15,6 +18,7 @@ import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.f_user.*
 import moxy.ktx.moxyPresenter
 import javax.inject.Inject
+
 
 class UserFragment : BaseFragment(), UserView {
 
@@ -49,10 +53,19 @@ class UserFragment : BaseFragment(), UserView {
         clData.visibility = if (user != null) View.VISIBLE else View.GONE
         user?.let {
             tvName.text = user.name
-            tvFollowersCount.text = getString(R.string.followers_count, user.followersCount)
-            tvRepoCount.text = getString(R.string.repo_count, user.repositoryCount)
-            Glide.with(this).load(user.avatarUrl).into(ivAvatar)
+            tvFollowersCount.text = user.followersCount.toString()
+            tvRepoCount.text = user.repositoryCount.toString()
+            loadAvatar(user.avatarUrl)
         }
+    }
+
+    private fun loadAvatar(avatarUrl: String) {
+        var requestOptions = RequestOptions()
+        requestOptions = requestOptions.transform(CenterCrop(), RoundedCorners(48))
+        Glide.with(this)
+            .load(avatarUrl)
+            .apply(requestOptions)
+            .into(ivAvatar)
     }
 
     override fun showLoading() {

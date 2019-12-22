@@ -1,4 +1,4 @@
-package com.example.justsomeapplication.ui.main.fragment
+package com.example.justsomeapplication.ui.user.fragment
 
 import androidx.annotation.StringRes
 import com.example.justsomeapplication.model.User

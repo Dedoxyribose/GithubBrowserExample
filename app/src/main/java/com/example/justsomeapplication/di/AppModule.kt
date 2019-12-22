@@ -1,7 +1,7 @@
 package com.example.justsomeapplication.di
 
-import com.example.justsomeapplication.di.main.MainActivityModule
 import com.example.justsomeapplication.di.start.StartActivityModule
+import com.example.justsomeapplication.di.user.UserActivityModule
 import com.example.justsomeapplication.retrofit.GithubApi
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-@Module(includes = [MainActivityModule::class, StartActivityModule::class])
+@Module(includes = [UserActivityModule::class, StartActivityModule::class])
 class AppModule() {
 
     @Provides

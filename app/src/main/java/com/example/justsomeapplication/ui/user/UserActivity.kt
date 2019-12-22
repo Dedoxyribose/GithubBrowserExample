@@ -1,4 +1,4 @@
-package com.example.justsomeapplication.ui.main
+package com.example.justsomeapplication.ui.user
 
 import android.os.Bundle
 import com.example.justsomeapplication.R
@@ -11,7 +11,7 @@ import ru.terrakok.cicerone.Navigator
 import ru.terrakok.cicerone.android.support.SupportAppNavigator
 import javax.inject.Inject
 
-class MainActivity : BaseActivity(), HasAndroidInjector {
+class UserActivity : BaseActivity(), HasAndroidInjector {
 
     @Inject
     lateinit var androidInjector: DispatchingAndroidInjector<Any>

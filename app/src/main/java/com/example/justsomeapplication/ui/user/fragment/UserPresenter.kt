@@ -1,4 +1,4 @@
-package com.example.justsomeapplication.ui.main.fragment
+package com.example.justsomeapplication.ui.user.fragment
 
 import com.example.justsomeapplication.R
 import com.example.justsomeapplication.business.user.IUserInteractor

@@ -1,4 +1,4 @@
-package com.example.justsomeapplication.di.main.fragment
+package com.example.justsomeapplication.di.user
 
 import com.example.justsomeapplication.business.user.IUserInteractor
 import com.example.justsomeapplication.business.user.UserInteractor
@@ -8,7 +8,7 @@ import dagger.Binds
 import dagger.Module
 
 @Module
-interface UserFragmentDependenciesModule {
+interface UserDependenciesModule {
 
     @Binds
     fun bindUserInteractor(userInteractor: UserInteractor): IUserInteractor
