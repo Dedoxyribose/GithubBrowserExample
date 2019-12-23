@@ -1,6 +1,5 @@
 package com.example.justsomeapplication.di
 
-import com.example.justsomeapplication.di.start.StartActivityModule
 import com.example.justsomeapplication.di.user.UserActivityModule
 import com.example.justsomeapplication.retrofit.GithubApi
 import com.google.gson.GsonBuilder
@@ -15,7 +14,7 @@ import ru.terrakok.cicerone.Router
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-@Module(includes = [UserActivityModule::class, StartActivityModule::class])
+@Module(includes = [UserActivityModule::class])
 class AppModule(private val router: Router) {
 
     @Provides
