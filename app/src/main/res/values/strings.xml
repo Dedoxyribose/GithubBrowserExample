@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Bowling App</string>
+    <string name="app_name">Github Example</string>
     <string name="do_search">Искать</string>
     <string name="user_name">Имя пользователя</string>
     <string name="nothing_found">Ничего не найдено</string>
