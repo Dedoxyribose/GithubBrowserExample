@@ -1,6 +1,6 @@
-package com.example.justsomeapplication.di.user.fragment
+package com.example.justsomeapplication.di.user.userinfo
 
-import com.example.justsomeapplication.ui.user.fragment.UserFragment
+import com.example.justsomeapplication.ui.user.userinfo.UserFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

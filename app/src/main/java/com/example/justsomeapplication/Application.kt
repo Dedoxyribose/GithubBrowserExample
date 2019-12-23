@@ -23,21 +23,21 @@ class Application : Application(), HasAndroidInjector {
     @Inject
     lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
-    lateinit var component: ApplicationComponent
+    private lateinit var component: ApplicationComponent
 
     override fun onCreate() {
         super.onCreate()
 
         INSTANCE = this
 
+        initCicerone()
+
         component = DaggerApplicationComponent.builder()
             .context(this)
-            .appModule(AppModule())
+            .appModule(AppModule(cicerone.router))
             .build()
 
         component.inject(this)
-
-        initCicerone()
     }
 
     override fun androidInjector(): AndroidInjector<Any> = androidInjector
@@ -48,9 +48,5 @@ class Application : Application(), HasAndroidInjector {
 
     fun getNavigatorHolder(): NavigatorHolder {
         return cicerone.navigatorHolder
-    }
-
-    fun getRouter(): Router {
-        return cicerone.router
     }
 }

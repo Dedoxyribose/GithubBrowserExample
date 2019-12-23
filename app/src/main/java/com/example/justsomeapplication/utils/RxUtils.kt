@@ -11,3 +11,7 @@ fun <T : Any> Single<T>.io(): Single<T> {
 fun <T : Any> Single<T>.mainThread(): Single<T> {
     return this.observeOn(AndroidSchedulers.mainThread())
 }
+
+fun <T : Any> Single<T>.computation(): Single<T> {
+    return this.observeOn(Schedulers.computation())
+}

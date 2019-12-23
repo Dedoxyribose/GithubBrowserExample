@@ -1,6 +1,7 @@
 package com.example.justsomeapplication.di.user
 
-import com.example.justsomeapplication.di.user.fragment.UserFragmentModule
+import com.example.justsomeapplication.di.user.repo.RepoListFragmentModule
+import com.example.justsomeapplication.di.user.userinfo.UserFragmentModule
 import com.example.justsomeapplication.ui.user.UserActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -11,7 +12,9 @@ interface UserActivityModule {
     @ContributesAndroidInjector(
         modules = [
             UserFragmentModule::class,
-            UserDependenciesModule::class]
+            UserDependenciesModule::class,
+            RepoListFragmentModule::class
+        ]
     )
     fun activity(): UserActivity?
 }

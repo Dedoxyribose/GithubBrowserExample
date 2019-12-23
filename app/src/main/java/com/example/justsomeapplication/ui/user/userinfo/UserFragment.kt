@@ -1,4 +1,4 @@
-package com.example.justsomeapplication.ui.user.fragment
+package com.example.justsomeapplication.ui.user.userinfo
 
 import android.content.Context
 import android.os.Bundle
@@ -18,7 +18,6 @@ import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.f_user.*
 import moxy.ktx.moxyPresenter
 import javax.inject.Inject
-
 
 class UserFragment : BaseFragment(), UserView {
 
@@ -43,7 +42,12 @@ class UserFragment : BaseFragment(), UserView {
         bSearch.setOnClickListener { presenter.onSearchClick() }
 
         etName.setTextChangeListener(presenter::onNameChange)
+
+        ivRepoBackground.setOnClickListener { onReposClick() }
+        tvRepoCount.setOnClickListener { onReposClick() }
     }
+
+    private fun onReposClick() = presenter.onReposClick()
 
     override fun setNameError(@StringRes error: Int?) {
         etName.setError(error)
@@ -57,6 +61,10 @@ class UserFragment : BaseFragment(), UserView {
             tvRepoCount.text = user.repositoryCount.toString()
             loadAvatar(user.avatarUrl)
         }
+    }
+
+    override fun setNothingFoundVisibility(show: Boolean) {
+        tvNothingFound.visibility = if (show) View.VISIBLE else View.GONE
     }
 
     private fun loadAvatar(avatarUrl: String) {

@@ -1,4 +1,4 @@
-package com.example.justsomeapplication.ui.user.fragment
+package com.example.justsomeapplication.ui.user.userinfo
 
 import androidx.annotation.StringRes
 import com.example.justsomeapplication.model.User
@@ -13,5 +13,8 @@ interface UserView : BaseMvpView {
 
     @StateStrategyType(AddToEndSingleStrategy::class)
     fun setUser(user: User?)
+
+    @StateStrategyType(AddToEndSingleStrategy::class)
+    fun setNothingFoundVisibility(show: Boolean)
 
 }

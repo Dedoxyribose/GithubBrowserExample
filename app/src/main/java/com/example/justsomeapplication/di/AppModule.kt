@@ -11,11 +11,12 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import ru.terrakok.cicerone.Router
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module(includes = [UserActivityModule::class, StartActivityModule::class])
-class AppModule() {
+class AppModule(private val router: Router) {
 
     @Provides
     @Singleton
@@ -39,5 +40,9 @@ class AppModule() {
             .addInterceptor(httpLogginInterceptor)
             .build()
     }
+
+    @Provides
+    @Singleton
+    fun provideRouter() = router
 
 }
