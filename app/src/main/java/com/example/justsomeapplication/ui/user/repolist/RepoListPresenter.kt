@@ -72,6 +72,7 @@ class RepoListPresenter @Inject constructor(
     }
 
     fun onSearchClick() {
+        viewState.hideKeyboard()
         disposable.clear()
         clearDataSet()
         load(0)

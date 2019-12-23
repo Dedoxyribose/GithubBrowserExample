@@ -15,4 +15,7 @@ interface BaseMvpView : MvpView {
 
     @StateStrategyType(OneExecutionStateStrategy::class)
     fun showError(error: String)
+
+    @StateStrategyType(OneExecutionStateStrategy::class)
+    fun hideKeyboard()
 }

@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:paddingTop="@dimen/margin"
-    android:paddingBottom="@dimen/margin">
+    android:paddingBottom="@dimen/margin"
+    android:background="#ffeeee">
 
     <TextView
         android:id="@+id/tvName"
@@ -16,6 +17,8 @@
         android:layout_marginEnd="@dimen/margin"
         android:ellipsize="end"
         android:maxLines="1"
+        android:textSize="18sp"
+        android:textColor="@color/textMain"
         app:layout_constraintEnd_toStartOf="@id/tvLanguage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

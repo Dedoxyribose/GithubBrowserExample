@@ -33,8 +33,11 @@ class UserPresenter @Inject constructor(
 
     fun onSearchClick() {
         if (checkNameValidWithError()) {
-            viewState.setUser(null)
-            viewState.setNothingFoundVisibility(false)
+            viewState.apply {
+                hideKeyboard()
+                setUser(null)
+                setNothingFoundVisibility(false)
+            }
             disposable.add(userInteractor.loadUser(typedName)
                 .mainThread()
                 .doOnSubscribe { viewState.showLoading() }
